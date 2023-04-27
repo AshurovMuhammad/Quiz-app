@@ -7,38 +7,38 @@
 
 <!-- Модальное окно -->
 <div class="modal fade" id="quizStartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Вы хотите начать тест?</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-      </div>
-      <div class="modal-body" id="modal-body-confirm">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Testni boshlamoqchimisiz?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Yopish"></button>
+            </div>
+            <div class="modal-body" id="modal-body-confirm">
 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-        <button type="button" class="btn btn-primary" id="start-button">Начать</button>
-      </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Yopish</button>
+                <button type="button" class="btn btn-primary" id="start-button">Boshlash</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
-<div class="h1">Тесты:</div>
+<div class="h1">Testlar:</div>
 <hr>
 {% for obj in object_list %}
 <button
-class="btn btn-link modal-button"
+        class="btn btn-link modal-button"
 
-data-pk="{{ obj.pk }}"
-data-quiz="{{ obj.name }}"
-data-questions="{{ obj.number_of_questions }}"
-data-difficulty="{{ obj.difficulty }}"
-data-time="{{ obj.time }}"
-data-pass="{{ obj.required_score_to_pass }}"
+        data-pk="{{ obj.pk }}"
+        data-quiz="{{ obj.name }}"
+        data-questions="{{ obj.number_of_questions }}"
+        data-difficulty="{{ obj.difficulty }}"
+        data-time="{{ obj.time }}"
+        data-pass="{{ obj.required_score_to_pass }}"
 
-data-bs-toggle="modal"
-data-bs-target="#quizStartModal"
+        data-bs-toggle="modal"
+        data-bs-target="#quizStartModal"
 >{{ obj.name }}
 </button><br>
 {% endfor %}

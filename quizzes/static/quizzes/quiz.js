@@ -119,7 +119,7 @@ const sendData = () => {
             // console.log(results)
             quizForm.classList.add('not-visible');
 
-            scoreBox.innerHTML = `<h5 class="res">${response.passed ? "Siz testdan muvaffaqiyatli o'tdingiz! " : "O'tish darajasidan past"} Sizning natijangiz ${response.score.toFixed(2)}%</h5>`
+            scoreBox.innerHTML = `<h5 class="res">${response.passed ? "Siz sinovdan muvaffaqiyatli o'tdingiz! " : "O'tgan baldan past"} Sizning natijangiz ${response.score.toFixed(2)}%</h5>`
 
             results.forEach(res => {
                 const resDiv = document.createElement("div");
@@ -129,7 +129,7 @@ const sendData = () => {
                     resDiv.classList.add(...cls);
 
                     if (resp == 'not answered'){
-                        resDiv.innerHTML += '<br><b><i> | нет ответа</i></b>';
+                        resDiv.innerHTML += '<br><b><i> | javob yoq</i></b>';
                         resDiv.classList.add('negative');
                     }
                     else{
@@ -138,12 +138,12 @@ const sendData = () => {
 
                         if (answer == correct){
                             resDiv.classList.add('positive');
-                            resDiv.innerHTML += `<br><i> | верно: ${answer}</i>`;
+                            resDiv.innerHTML += `<br><i> | togri: ${answer}</i>`;
                         }
                         else{
                             resDiv.classList.add('negative');
-                            resDiv.innerHTML += `<br><b> | правильный ответ: ${correct}</b>`;
-                            resDiv.innerHTML += `<b> | ваш ответ: ${answer}</b>`;
+                            resDiv.innerHTML += `<br><b> | togri javob: ${correct}</b>`;
+                            resDiv.innerHTML += `<b> | sizning javobingiz: ${answer}</b>`;
                         }
                     }
                 }

@@ -20,7 +20,7 @@ modalBtns.forEach(modalBtns => modalBtns.addEventListener('click', () => {
             <li>Murakkablik darajasi: <b>${difficulty}</b></li>
             <li>Savollar miqdori: <b>${numQuestions}</b></li>
             <li>Eng yuqori bal: <b>${scoreToPass}%</b></li>
-            <li>Vaqt: <b>${time}</b></li>
+            <li>Vaqt: <b>${time}</b> min</li>
         </ul>
     </div>
     `;
