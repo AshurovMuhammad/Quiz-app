@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ obj.name }}{% endblock title %}
+
+{% block content %}
+<div class="row">
+    <div class="col">
+        <h2>{{ obj.name }}</h2>
+        <p>Баллы: {{ obj.required_score_to_pass }}</p>
+    </div>
+    <div class="col text-end" id="timer-box">обратный отсчет</div>
+</div>
+
+<a href="{% url 'quizzes:main-view' %}" class="btn btn-info">Назад</a>
+
+<form id="quiz-form" class="mt-3 mb-3">
+    {% csrf_token %}
+    <div id="quiz-box"></div>
+    <button class="btn btn-primary mt-3">Сохранить</button>
+</form>
+<div id="score-box"></div>
+<div id="results-box"></div>
+{% endblock content %}
+
+{% block scripts %}
+<script src="{% static 'quizzes/quiz.js' %}"></script>
+{% endblock scripts %}
